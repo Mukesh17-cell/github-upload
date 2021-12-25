@@ -7,34 +7,25 @@ Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
 #include <stdio.h>
-#include<math.h>
+#include<stdlib.h>
+#include<conio.h>
 
- main()
+void  main()
 {
-    int count;
-    float value, high , low, range, average, sum;
-    printf(" dear user enter the values in a line : when negative number encountered the process will get over\n");
-    sum=0;
-    count=0;
-    input:
-    scanf(" %f \n ", &value);
-    if( value<0 )goto output;
-    count = count +1;
-    if(count ==1)
-    high =low= value;
-    else if( value>high)
-    high= value;
-    else if (value <low)
-    low= value;
-    sum = sum +value;
-    goto input;
-    
-    output:
-    average= sum/ count;
-    range = high- low;
-    printf("\n\n");
-    printf(" total values : %d\n", count);
-    printf("  highest value= %f  \n lowest value =%f\n", high, low);
-    printf(" range = %f\n  average =%f", range, average);
+   int i;
+   char month[12][20]={"JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY",
+                        "AUGUST","SEPTEMBER","OCTOBER", "NOVEMBER","DECEMBER"};
+   
+   printf(" enter the month value\n");
+   scanf(" %d",&i);
+   if(i<1||i>12)
+   {
+   printf(" the value been entered is an error , pls give a valid input\n");
+   getch();
+   }
+     if(i!=12)
+   printf(" %s comes before the month %s", month[i-1],month[i]);
+   else
+   printf(" %s comes before the month %s\n", month[i-1], month[0]);
+   getch();
 }
-
